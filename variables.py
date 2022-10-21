@@ -1,4 +1,4 @@
-print("First Python code.")
+print("Python Variables.")
 
 # input keyword is waiting for a keyboard input
 name = input("What's your name?: ")
