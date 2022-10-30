@@ -12,3 +12,5 @@ print(f'Slicing sentence {text} from 5 to the end of the index: ' + text[4:-1])
 
 print(f'Slicing sentence {text} from 5 to 15 skipping 2 characters in between: ' + text[5:15:2])
 print(f'Slicing sentence {text} from 0 to the end skipping 2 characters in between: ' + text[::2])
+
+print(f'A String is immutable, the string can not be changed at a specific location')
