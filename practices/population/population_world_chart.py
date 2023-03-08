@@ -2,7 +2,7 @@ import util_file as file
 import charts.charts as charts
 
 
-def get_data_chart(path, columns):
+def get_data_chart__for_solution(path, columns):
     header, data = file.get_csv_data(path)
 
     labels_chart = []
@@ -35,5 +35,5 @@ def generate_charts(c_labels, c_values):
 if __name__ == '__main__':
     print("Challenge to generate 'matplotlib' charts reading data from a CSV file for specific columns key-value")
     dictionary_columns = {'key': 'Country/Territory', 'value': 'World Population Percentage'}
-    labels, values = get_data_chart('data/world_population.csv', dictionary_columns)
+    labels, values = get_data_chart__for_solution('data/world_population.csv', dictionary_columns)
     generate_charts(labels, values)
