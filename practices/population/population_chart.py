@@ -1,6 +1,6 @@
-import charts.charts as charts
-import util_file.util_file as file
 import re
+import util_file as file
+import charts.charts as charts
 
 
 def get_data_chart(path, country):
@@ -33,10 +33,9 @@ def get_data_chart(path, country):
 
 
 def generate_charts(labels, values):
-
     if len(labels) > 0 and len(values) > 0:
         charts.generate_pie_chart(labels, values)
-        charts.generate_chart(labels, values)
+        charts.generate_bar_chart(labels, values)
     else:
         print('There is not data to generate charts')
 
@@ -46,4 +45,3 @@ if __name__ == '__main__':
     input_country = 'Mexico'
     labels, values = get_data_chart('data/world_population.csv', input_country)
     generate_charts(labels, values)
-
