@@ -26,7 +26,7 @@ def get_data_chart__for_solution(path, columns):
 
 def generate_charts(c_labels, c_values):
     if len(c_labels) > 0 and len(c_values) > 0:
-        charts.generate_pie_chart(c_labels, c_values)
+        charts.generate_pie_chart(c_labels, c_values, fig)
         charts.generate_bar_chart(c_labels, c_values)
     else:
         print('There is not data to generate charts')

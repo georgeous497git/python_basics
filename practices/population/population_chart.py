@@ -32,10 +32,10 @@ def get_data_chart(path, country):
     return labels_chart, values_chart
 
 
-def generate_charts(labels, values):
+def generate_charts(labels, values, fig_name):
     if len(labels) > 0 and len(values) > 0:
-        charts.generate_pie_chart(labels, values)
-        charts.generate_bar_chart(labels, values)
+        charts.generate_pie_chart(labels, values, fig_name)
+        charts.generate_bar_chart(labels, values, fig_name)
     else:
         print('There is not data to generate charts')
 
@@ -44,4 +44,4 @@ if __name__ == '__main__':
     print("Challenge to generate 'matplotlib' charts reading data from a CSV file")
     input_country = 'Mexico'
     labels, values = get_data_chart('data/world_population.csv', input_country)
-    generate_charts(labels, values)
+    generate_charts(labels, values, input_country)
