@@ -24,6 +24,10 @@ def get_data_chart__for_solution(path, columns):
     return labels_chart, values_chart
 
 
+def get_data_chart_pandas(path):
+    return file.get_csv_data_pandas(path)
+
+
 def generate_charts(c_labels, c_values, fig_name):
     if len(c_labels) > 0 and len(c_values) > 0:
         charts.generate_pie_chart(c_labels, c_values, fig_name)
@@ -34,6 +38,11 @@ def generate_charts(c_labels, c_values, fig_name):
 
 if __name__ == '__main__':
     print("Challenge to generate 'matplotlib' charts reading data from a CSV file for specific columns key-value")
+    csv_path = 'data/world_population.csv'
+
     dictionary_columns = {'key': 'Country/Territory', 'value': 'World Population Percentage'}
-    labels, values = get_data_chart__for_solution('data/world_population.csv', dictionary_columns)
-    generate_charts(labels, values, "chart")
+    labels, values = get_data_chart__for_solution(csv_path, dictionary_columns)
+    generate_charts(labels, values, 'old_method')
+
+    labels_p, values_p = get_data_chart_pandas(csv_path)
+    generate_charts(labels_p, values_p, 'pandas_method')
